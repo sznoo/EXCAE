@@ -1,0 +1,17 @@
+clip_model_name: "openai/clip-vit-base-patch32"
+
+moe_config:
+  embed_dim: 512  # CLIP text/image embedding dimension
+  num_experts_per_combination: 2
+  num_experts: 8  # 사용할 총 expert 수
+  nhead: 8  # Transformer attention heads
+  num_layers: 6  # Transformer layer 수
+  num_embs: 2  # 입력 embedding 개수 (예: caption + video)
+  top_k: 2  # gating 시 선택할 expert 개수
+  hidden_dim: 256  # gating network hidden layer 차원
+
+neck_config:
+  enable: false  # 현재 사용 안 하지만 구조를 대비해 enable flag만 추가
+  type: "mlp"  # neck이 있다면 타입 (예: "mlp", "transformer" 등)
+  hidden_dim: 512  # neck hidden dim
+  num_layers: 2  # neck layer 수

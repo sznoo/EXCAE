@@ -33,7 +33,7 @@ if __name__ == "__main__":
         num_workers=16,
     )
 
-    excae_config_path = "/home/intern/jinwoo/ECA4VTR/paper_ver/config.yaml"
+    excae_config_path = "/home/intern/jinwoo/EXCAE/config.yaml"
     excae_config = OmegaConf.load(excae_config_path)
 
     excae = VideoClipMoeCrossAttentionModel(excae_config)
